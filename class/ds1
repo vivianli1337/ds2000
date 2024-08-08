@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jan 21 09:41:50 2022
+
+@author: vivian
+"""
+
+def main ():
+    #step one: gather data
+    kg = int(input("How much does Grizz weigh, in kg?\n"))
+    
+    #step two: computation nt-round
+    lbs = int(kg * 2.2)
+    
+    #step three: communicate
+    print("in pounds, Grizz weights\n", lbs)
+    
+main()

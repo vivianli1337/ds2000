@@ -1,0 +1,71 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jan 28 13:57:21 2022
+
+@author: vivian
+"""
+import matplotlib.pyplot as plt
+MSIZE = 12
+
+def main():
+    
+    
+    # step one: gather the month from the user
+    # and red from the file
+
+    month = input("Enter the month.\n")
+    filename = month + "_bones.txt"
+   
+    print("Your file:", filename)
+    
+    
+    with open (filename, "r") as bones:
+        # read first week in the file and the plot
+        week = bones.readline().strip()
+        days = int(bones.readline())
+        x_pos = 1
+        plt.plot(x_pos, days, "o", color = "deepskyblue", markersize = MSIZE, label = week)
+    
+    
+        # read second week in the file and plot    
+        week = bones.readline().strip()
+        days = int(bones.readline())
+        # x_pos += 1 EXACTLY THE SAME AS x_pos = x_pos + 1
+        x_pos += 1
+        plt.plot(x_pos, days, "o", color = "orange", markersize = MSIZE, label = week)
+    
+        #read the third week fromo the file and plot
+        week = bones.readline().strip()
+        days = int(bones.readline())
+        x_pos += 1
+        plt.plot(x_pos, days, "o", color = "firebrick", markersize = MSIZE, label = week)
+    
+        # read fourth week in from file and plot
+        week = bones.readline().strip()
+        days = int(bones.readline())
+        x_pos += 1
+        plt.plot(x_pos, days, "o", color = "hotpink", markersize = MSIZE, label = week)
+        
+    # label the axes
+    plt.xlabel("Weeks")
+    plt.ylabel("Bones Days")
+    # give the graph a title
+    plt.title("Bones Days per week in November")
+    
+    # Change the range of the y axis
+    plt.ylim(0,7)
+    # make a legend show up
+    plt.legend()
+    # fix the numbers on the x axis
+    plt.xticks ([1,2,3,4])
+    
+main()
+
+
+    
+
+
+
+
+

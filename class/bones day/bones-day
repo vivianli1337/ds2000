@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jan 25 13:59:14 2022
+
+@author: vivian
+"""
+BONES_FILE = "bones_days.txt"
+
+def main():
+    #step one -- gather info from the data file
+    with open(BONES_FILE, "r") as infile:
+        week_one = int(infile.readline())
+        week_two = int(infile.readline())
+        week_three = int(infile.readline())
+        week_four = int(infile.readline())
+        week_five = int(infile.readline())
+        week_six = int(infile.readline())
+        
+    #step 2 find average
+    total = week_one + week_two + week_three + week_four + week_five +week_six
+    avg = total/6
+    
+    #step three -- communication
+    print("The average number of bones day per week:", round (avg, 3))
+    
+
+    #new problem- bones summary data
+   
+
+    SUMMARY_FILE = "bones_summary.txt"
+
+    #step one -- gather info from the different data fil
+    with open(SUMMARY_FILE, "r") as infile:
+        desc_one = infile.readline().strip()
+        days = int(infile.readline())
+        
+        desc_two = infile.readline()
+        pct_bones = float(infile.readline())
+
+        desc_three = infile.readline()   
+        pct_no_reading = float(infile.readline())
+        
+    #step two
+    bones_days = pct_bones * days
+    
+    #step three
+    print(desc_one, ":", days)
+    print(desc_two, ":", pct_bones)
+    print(desc_three, ":", pct_no_reading)
+    print("that means we have this many bones days:", round(bones_days))
+
+main()
+    
+
+    

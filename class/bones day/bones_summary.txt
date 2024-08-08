@@ -1,0 +1,6 @@
+Total Days
+103
+% Bones Days
+.35
+% No Reading
+.242
